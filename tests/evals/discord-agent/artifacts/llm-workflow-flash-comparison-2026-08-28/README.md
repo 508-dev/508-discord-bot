@@ -11,12 +11,13 @@ This tracked, immutable snapshot supports the findings in [the OpenRouter planne
 
 The observed JSON preserves scenario checks, provider-draft failures, selected-attempt latency, token usage, and raw model drafts needed to audit the report's aggregates. The `api_key_configured` boolean was removed from every published observation. No credentials, request headers, HTML viewer, CTRF output, or debug trace is retained here.
 
-Four recovery observations include `result_provenance` because their selected
-provider probe failed to parse and triggered a retry. It records that the
-published `observed` result came from `deterministic_response`, that attempt 1
-remained selected, and that the unrecorded retry did not meet the harness's
-replacement condition. Their existing `provider_draft` entries remain the
-first-attempt provider-probe evidence.
+Five recovery observations include `result_provenance` because their selected
+provider draft triggered a retry. Four first attempts failed to parse; the
+fifth, `github_issue_search_001`, parsed but failed its GitHub `state` and
+intent assertions. In every case the published `observed` result came from
+`deterministic_response`, attempt 1 remained selected, and the unrecorded
+retry did not meet the harness's replacement condition. Their existing
+`provider_draft` entries remain the first-attempt provider-probe evidence.
 
 These are historical observations, not a claim that a live provider rerun will reproduce the same output. Provider routing was not pinned; rerun the documented live-planner command against the named runtime commit to make a new comparison.
 

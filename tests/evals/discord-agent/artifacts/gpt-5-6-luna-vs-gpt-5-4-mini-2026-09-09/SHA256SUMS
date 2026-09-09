@@ -1,0 +1,5 @@
+cc6ac1934afc35414cc67195e5e5d4e8078324480055538eace418de9acb6b58  tests/evals/discord-agent/artifacts/gpt-5-6-luna-vs-gpt-5-4-mini-2026-09-09/README.md
+4a52d56863ecc352abb0fee5ffccda2b8729f4cb3729f82543c15a85f8178da9  tests/evals/discord-agent/artifacts/gpt-5-6-luna-vs-gpt-5-4-mini-2026-09-09/full-sweeps/gpt-5.4-mini.observed.json
+92ea3a093c43ae4709425324e6a0e601815d86e49e1827866e152b884e7c4ae7  tests/evals/discord-agent/artifacts/gpt-5-6-luna-vs-gpt-5-4-mini-2026-09-09/full-sweeps/gpt-5.4-mini.score.md
+bb01b6b1f1345592e92b59fe3a7ea0ab2383f0ae0ae90d5c3f2ae0f7831de45f  tests/evals/discord-agent/artifacts/gpt-5-6-luna-vs-gpt-5-4-mini-2026-09-09/full-sweeps/gpt-5.6-luna.observed.json
+a137b5b4922ef0f738ac7c2da1f65eef5c85ef7eb166a3d64750a78cf271cf83  tests/evals/discord-agent/artifacts/gpt-5-6-luna-vs-gpt-5-4-mini-2026-09-09/full-sweeps/gpt-5.6-luna.score.md
