@@ -5,7 +5,7 @@
 - Harness: Discord-agent canonical live-planner eval
 - Route: direct OpenAI (`https://api.openai.com/v1`) using `OPENAI_API_KEY`
 - Models: `gpt-5.6-luna` and `gpt-5.4-mini`
-- Published evidence: [sanitized audit snapshot](../../tests/evals/discord-agent/artifacts/gpt-5-6-luna-vs-gpt-5-4-mini-2026-09-09/README.md)
+- Detail: summary-only; per-scenario generated observations are intentionally excluded from this PR.
 
 ## Run method and selection semantics
 
@@ -46,9 +46,9 @@ selected-usage rate-card proxy.
 | Harness retries | 10 | 6 |
 
 Luna's selected average latency was 58.8% higher and its end-to-end suite time
-was 84.3% longer. It generated 17.4% fewer selected output tokens. The audited
-observation files and compact score summaries behind every value in this table
-are tracked in the linked snapshot.
+was 84.3% longer. It generated 17.4% fewer selected output tokens. This table
+retains the selected-attempt aggregates; per-scenario generated observations
+are intentionally excluded from this PR.
 
 ## Cost interpretation
 
@@ -65,7 +65,7 @@ the run date are used only as a rate proxy:
 
 The selected-usage proxy puts Luna at 9.07x lower cost (an 89.0% reduction).
 This is neither an invoice nor a lower bound: direct-provider billing can
-differ, and the published selected attempts omit any unselected retry or inner
+differ, and the reported selected attempts omit any unselected retry or inner
 HTTP-fallback requests.
 
 ## What the behavioral result does and does not show

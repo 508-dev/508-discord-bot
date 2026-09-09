@@ -102,7 +102,7 @@ The planner prompt defines `intent` only as `short_snake_case_or_null`, but the 
 
 ### Qwen3.8-Flash
 
-- Seven of the eight initial parse failures were OpenRouter HTTP 429 scenario outcomes; the eighth returned `message.content = None`. Because every initial HTTP error caused an immediate second request without `response_format`, each 429 attempt represents two failed HTTP requests, although the artifacts record only the resulting scenario attempt.
+- Seven of the eight initial parse failures were OpenRouter HTTP 429 scenario outcomes; the eighth returned `message.content = None`. Because every initial HTTP error caused an immediate second request without `response_format`, each 429 attempt represents two failed HTTP requests, although the generated evaluation output recorded only the resulting scenario attempt.
 - A spaced recovery pass reran the seven 429 scenarios individually with a 15-second gap. The selected results contain two passes, one valid JSON response that used `state: all` instead of `open`, and four HTTP 429 outcomes. For those four 429 selections, the unrecorded retry outcome is unknown unless it fully passed, because a failed retry does not replace the original result.
 - One successful recovery call took 62.89 seconds.
 - In the original full sweep, every valid parsed failure was only an `intent` label mismatch. The recovery pass nevertheless found a substantive GitHub state mismatch, so valid-output quality is promising but not yet established.
@@ -137,9 +137,9 @@ Accordingly:
 6. Before selecting Qwen3.8 27B for multimodal work, add sanitized image and video fixtures with assertions for extraction accuracy, tool arguments, and refusal behavior. The current suite does not exercise vision.
 7. Add sanitized golden corpora for resume/profile and skill extraction, HN lead classification, job requirement extraction, and candidate reranking. Score field accuracy and ranking quality, not only parse/completeness success.
 
-## Verification and artifacts
+## Verification
 
 - Focused harness tests: `22 passed` in `tests/unit/test_agent_evals.py`.
 - Deterministic canonical replay: 26 passed, 0 failed, 1 known failure.
 - Live runs: four complete 27-scenario sweeps plus the seven-scenario Qwen3.8 Flash recovery pass.
-- The sanitized, immutable [audit snapshot](../../tests/evals/discord-agent/artifacts/llm-workflow-flash-comparison-2026-08-28/README.md) includes the four full-sweep normalized observations and score summaries plus the seven Qwen3.8-Flash recovery observations. It supports the rankings, failure classifications, selected latencies, and token totals above; `SHA256SUMS` verifies its contents. The generated `reports/` directory remains local-only scratch output and is not an audit link.
+- Per-scenario generated reports and raw observations remain local-only and are intentionally excluded from this summary PR.
